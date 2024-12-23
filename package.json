@@ -3,12 +3,20 @@
   "private": true,
   "version": "0.1.6-alpha.4",
   "type": "module",
+  "packageManager": "npm@10.2.4",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "check-types": "tsc --noEmit",
     "lint": "eslint .",
     "preview": "vite preview"
+  },
+  "turbo": {
+    "pipeline": {
+      "build": {
+        "outputs": [".next/**", "dist/**"]
+      }
+    }
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.1.2",
