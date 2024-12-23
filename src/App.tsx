@@ -1,22 +1,17 @@
-import { Outlet, Route, Routes } from "react-router-dom";
-import Agents from "./Agents";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { AboutPage } from "./pages/about-page";
-
-function Layout() {
-    return (
-        <div className="min-h-screen flex flex-col items-center justify-center p-4">
-            <Agents />
-            <Outlet />
-        </div>
-    );
-}
+import Layout from "./Layout";
+import HowItsBuilt from "./pages/how-its-built";
+import HowToUseLea from "./pages/how-to-use-lea";
+import { AboutPage } from "@/pages/about-page";
 
 function App() {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
                 <Route index element={<AboutPage />} />
+                <Route path="how-to-use-lea" element={<HowToUseLea />} />
+                <Route path="how-its-built" element={<HowItsBuilt />} />
             </Route>
         </Routes>
     );
